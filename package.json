@@ -4,7 +4,7 @@
   "description": "generate tileset.json",
   "main": "lib/index.js",
   "dependencies": {
-    "@hackforplay/next": "^0.2.3",
+    "@hackforplay/next": "^0.3.0",
     "@types/sharp": "^0.17.9",
     "sharp": "^0.20.5"
   },

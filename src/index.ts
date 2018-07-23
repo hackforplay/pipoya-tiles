@@ -1,5 +1,6 @@
 import * as sharp from "sharp";
 import * as fs from "fs";
+import { Square } from "@hackforplay/next";
 
 type TileTypes =
   | "Nope"
@@ -20,19 +21,6 @@ const tileTokenMap: { [key: string]: TileTypes } = {
   B: "Barrier",
   F: "Float",
   S: "Sky"
-};
-
-type TileSet = {
-  index: number;
-  placement: { type: TileTypes };
-  tile: {
-    size: number[];
-    image: {
-      type: string;
-      src: string;
-    };
-    author: { name: string; url: string };
-  };
 };
 
 export default async function generate(inputFile: string, settingFile: string) {
@@ -61,7 +49,9 @@ export default async function generate(inputFile: string, settingFile: string) {
       if (type === "Nope") continue; // Nope
       // トリミングと拡大
       const index = indexCounter++;
-      const promise: Promise<TileSet> = source
+      const tileSize: [number, number] = [size, size];
+      const imageType: "data-url" = "data-url";
+      const promise: Promise<Square> = source
         .clone()
         .extract({
           left: column * size,
@@ -76,9 +66,9 @@ export default async function generate(inputFile: string, settingFile: string) {
             type
           },
           tile: {
-            size: [size, size],
+            size: tileSize,
             image: {
-              type: "data-url",
+              type: imageType,
               src: `data:image/png;base64,${buffer.toString("base64")}`
             },
             author: {
