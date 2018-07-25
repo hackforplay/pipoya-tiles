@@ -8,7 +8,9 @@
     "@types/sharp": "^0.17.9",
     "sharp": "^0.20.5"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gh-pages": "^1.2.0"
+  },
   "scripts": {
     "test": "tsc && node lib/pipoya.js"
   },
