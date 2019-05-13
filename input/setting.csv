@@ -101,7 +101,7 @@
 100	W	W	W	W	W	W	W	W
 101	S	S	W	W	W	W	W	W
 102	F	F	S	S	N	W	W	W
-103								
+103	N	N	N	N	N	N	N	N
 104	B	F	B	B	B	B	B	B
 105	B	B	B	B	B	B	B	B
 106	B	B	F	B	B	B	B	B
@@ -151,7 +151,7 @@
 150	B	B	B	B	B	B	B	B
 151	B	B	B	B	B	B	B	B
 152	B	B	B	B	B	B	B	B
-153	B	B			B	B	B	B
+153	B	B	N	N	B	B	B	B
 154	B	B	B	B	B	B	B	B
 155	B	B	B	B	B	B	B	B
 156	B	B	B	B	B	B	B	B
