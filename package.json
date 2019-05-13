@@ -5,8 +5,8 @@
   "main": "lib/index.js",
   "dependencies": {
     "@hackforplay/next": "^0.3.0",
-    "@types/sharp": "^0.17.9",
-    "sharp": "^0.20.5"
+    "@types/sharp": "^0.22.1",
+    "sharp": "^0.22.1"
   },
   "devDependencies": {
     "gh-pages": "^1.2.0"
