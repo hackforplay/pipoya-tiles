@@ -12,7 +12,8 @@
     "gh-pages": "^1.2.0"
   },
   "scripts": {
-    "test": "tsc && node lib/pipoya.js"
+    "test": "tsc && node lib/pipoya.js",
+    "deploy": "gh-pages -d output"
   },
   "author": "teramotodaiki",
   "license": "MIT"
