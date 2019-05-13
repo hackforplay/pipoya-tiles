@@ -1,18 +1,9 @@
 import * as sharp from "sharp";
 import * as fs from "fs";
 import { Square } from "@hackforplay/next";
+import { TileType } from "@hackforplay/next/lib/types/placement";
 
-type TileTypes =
-  | "Nope"
-  | "Ground"
-  | "Wall"
-  | "Road"
-  | "Rug"
-  | "Barrier"
-  | "Float"
-  | "Sky";
-
-const tileTokenMap: { [key: string]: TileTypes } = {
+const tileTokenMap: { [key: string]: TileType } = {
   N: "Nope",
   G: "Ground",
   W: "Wall",
@@ -47,7 +38,6 @@ export default async function generate(inputFile: string, settingFile: string) {
       const type = tileTokenMap[token];
 
       if (!type) throw new Error(`Unknown token "${token}" at ${column}`);
-      if (type === "Nope") continue; // Nope
       // トリミングと拡大
       const index = indexCounter++;
       const tileSize: [number, number] = [size, size];
