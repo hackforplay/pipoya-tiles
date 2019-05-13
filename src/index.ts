@@ -40,12 +40,13 @@ export default async function generate(inputFile: string, settingFile: string) {
   });
 
   for (const settingRow of setting.split("\n")) {
-    const [rowValue, ...tileTypes] = settingRow.split("\t");
+    const [rowValue, ...tileTypes] = settingRow.trim().split("\t");
     const row = parseInt(rowValue);
 
     for (const [column, token] of tileTypes.entries()) {
       const type = tileTokenMap[token];
 
+      if (!type) throw new Error(`Unknown token "${token}" at ${column}`);
       if (type === "Nope") continue; // Nope
       // トリミングと拡大
       const index = indexCounter++;

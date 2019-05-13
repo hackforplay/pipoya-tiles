@@ -3,7 +3,11 @@ import generate from ".";
 
 console.time("finish");
 
-generate("./input/base.png", "./input/setting.csv").then(json => {
-  fs.writeFileSync("./output/tileset.json", json);
-  console.timeEnd("finish");
-});
+generate("./input/base.png", "./input/setting.csv")
+  .then(json => {
+    fs.writeFileSync("./output/tileset.json", json);
+    console.timeEnd("finish");
+  })
+  .catch(err => {
+    console.error(err);
+  });
